@@ -2,6 +2,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+#skip a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip a:focus {
+    position:static;
+    height: auto;
+    width: auto;
+}
+
+ol li{
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+
 header, nav{
     font-family: 'Quicksand';
     font-weight: 300;
@@ -89,10 +110,25 @@ h1{
 
 
 grid-gallery {
-    width:90%;
-    max-width:100%;
+    margin-top: 5px;
+    width:100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width:801px)  {
+    grid-gallery {
+        margin-top: 15px;;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width:1025px)  {
+    grid-gallery {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
 
 img.gallery {
@@ -105,7 +141,6 @@ img.gallery {
     padding: 5px; 
     border-radius: 2px;
     align-self: center;
-    max-width: 80%;
     
 }
 
