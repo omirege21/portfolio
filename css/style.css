@@ -98,8 +98,14 @@ nav li.active a:hover{
     text-decoration: none;
 }
 
-#text{
-    margin-bottom: 10px;
+#text {
+    margin-bottom: 50px;
+}
+
+#text p{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 , main {
@@ -135,6 +141,7 @@ img.full{
     height: 200px;
     width: 200px;
     object-fit: cover;
+    margin-bottom: 25px;
 }
 
 img.grid {
