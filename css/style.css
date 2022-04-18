@@ -22,6 +22,9 @@
 }
 
 ol li{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
     list-style-type: disc;
     list-style-position: inside;
 }
