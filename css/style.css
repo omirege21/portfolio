@@ -166,7 +166,6 @@ img.grid:nth-child(odd) {
 }
 
 img.grid:hover, img.grid:nth-child(even):hover, img.gallery:hover {
-    border: ridge 2px #242424;
     border-radius: 6px;
     -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
