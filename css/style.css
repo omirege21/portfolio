@@ -15,6 +15,10 @@
     position:static;
     height: auto;
     width: auto;
+    background-color: #e6e0e0;
+    color: #333;
+    font-weight: 500;
+    margin: 2px;
 }
 
 ol li{
@@ -28,9 +32,15 @@ header, nav{
     font-weight: 300;
 }
 
-body{
+
+
+body.parallax { 
     background-image: url(../images/background.jpg);
-    animation: fade ease 1s;
+    height: 80%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -104,6 +114,7 @@ h1 , main {
     border-radius: 4px;
     background-color: bisque;
     border: 2px solid gainsboro;
+    animation: fade ease 1s;
 }
 
 h1{
@@ -125,7 +136,7 @@ grid-gallery {
         margin-top: 15px;;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat (5,300px)
+        grid-template-rows: repeat (5,300px);
     }
     img.gallery{
         height: 350px;
@@ -134,15 +145,20 @@ grid-gallery {
 }
 @media (min-width:1025px)  {
     grid-gallery {
-
         margin-top: 25px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat (3,500px);
+
+    }
+    img.gallery{
+        height: 450px;
+        width:90%;
     }
 }
 
 img.gallery {
-    height: 300px;
+    height: 200px;
     width: 100%;
     object-fit: cover;
     border: solid 2px #242424;
@@ -211,7 +227,7 @@ main{
 
 #airplane {
     animation-name: mymove;
-    animation-duration: 10s;
+    animation-duration: 20s;
     animation-iteration-count: 500;
     width:80px;
 }
@@ -249,12 +265,24 @@ main{
     }
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
     #airplane {
         animation: none;
     }
-    balloon:active{
+    balloon:active img{
         animation:none;
+        visibility: hidden;
+    }
+
+    h1 , main {
+        animation:none;
+    }
+
+    body.parallax { 
+        background-image: url(../images/background.jpg);
+        height: 100%; 
+        background-attachment: initial;
+
     }
   }
 
