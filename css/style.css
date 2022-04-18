@@ -30,6 +30,7 @@ header, nav{
 
 body{
     background-image: url(../images/background.jpg);
+    animation: fade ease 1s;
 }
 
 
@@ -87,7 +88,9 @@ nav li.active a:hover{
     text-decoration: none;
 }
 
-
+#text{
+    margin-bottom: 10px;
+}
 
 h1 , main {
     min-width: 200px;
@@ -111,9 +114,10 @@ h1{
 
 grid-gallery {
     margin-top: 5px;
-    width:100%;
     display: grid;
     grid-template-columns: 1fr;
+    grid-gap: 10px;
+
 }
 
 @media (min-width:801px)  {
@@ -121,10 +125,16 @@ grid-gallery {
         margin-top: 15px;;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat (5,300px)
+    }
+    img.gallery{
+        height: 350px;
+        width:90%;
     }
 }
 @media (min-width:1025px)  {
     grid-gallery {
+
         margin-top: 25px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -132,27 +142,27 @@ grid-gallery {
 }
 
 img.gallery {
-
-    border: solid 5px #242424;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding: 5px; 
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border: solid 2px #242424;
     border-radius: 2px;
     align-self: center;
-    
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
 }
 
 img.gallery:nth-child(odd) {
-    border: solid 5px #006f40;
+    border: solid 2px #006f40;
 }
 
 img.gallery:hover, img.gallery:nth-child(even):hover {
-    border: ridge 10px #242424;
-    width: 85%;
+    border: ridge 2px #242424;
+
     border-radius: 8px;
-    padding: 0px; 
+    padding: 0px;     
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
 }
 
 footer{
@@ -203,7 +213,7 @@ main{
     animation-name: mymove;
     animation-duration: 10s;
     animation-iteration-count: 500;
-    width:200px;
+    width:80px;
 }
   
 @keyframes mymove {
@@ -214,6 +224,15 @@ main{
     to {
         margin-left: -200%;
     }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
 
 @keyframes planet {
